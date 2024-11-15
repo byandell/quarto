@@ -1,0 +1,68 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Quarto Dashboard Basics Python\"\n",
+        "format: dashboard\n",
+        "---"
+      ],
+      "id": "180bae37"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "from plotnine import ggplot, aes, geom_point, geom_bar\n",
+        "from plotnine.data import mpg"
+      ],
+      "id": "bbf83510",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "title": "Highway vs City Mileage"
+      },
+      "source": [
+        "(\n",
+        "  ggplot(mpg) + \n",
+        "  aes(x = \"cty\", y = \"hwy\") +\n",
+        "  geom_point()\n",
+        ")"
+      ],
+      "id": "495efd93",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "title": "Drive types"
+      },
+      "source": [
+        "(\n",
+        "  ggplot(mpg) +\n",
+        "  aes(x = \"drv\") +\n",
+        "  geom_bar()\n",
+        ")"
+      ],
+      "id": "a925e912",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/brianyandell/Library/Python/3.9/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
