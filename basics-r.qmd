@@ -1,0 +1,22 @@
+---
+title: "Quarto Dashboard Basics R"
+format: dashboard
+---
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+#| title: Highway vs City Mileage
+ggplot(mpg) + 
+  aes(cty, hwy) +
+  geom_point()
+```
+
+```{r}
+#| title: Drive types
+ggplot(mpg) +
+  aes(drv) +
+  geom_bar()
+```

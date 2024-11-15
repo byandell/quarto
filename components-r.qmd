@@ -1,0 +1,49 @@
+---
+title: "Pages"
+format:
+  dashboard:
+    logo: images/beetle.png
+    nav-buttons:
+      - icon: github
+        href: https://github.com/quarto-dev/quarto-cli
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/company/posit-software/
+        aria-label: LinkedIn
+      - icon: youtube
+        href: https://youtube.com]
+        aria-label: YouTube
+---
+
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+#  {.sidebar}
+
+Main Sidebar.
+
+# Scatter
+
+##  {.sidebar}
+
+Sidebar for Scatter.
+
+## 
+
+```{r}
+#| title: Highway vs City Mileage
+ggplot(mpg) + 
+  aes(cty, hwy) +
+  geom_point()
+```
+
+# Bar
+
+```{r}
+#| title: Drive types
+ggplot(mpg) +
+  aes(drv) +
+  geom_bar()
+```

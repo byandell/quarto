@@ -1,0 +1,82 @@
+---
+title: "Pages"
+format:
+  dashboard:
+    logo: images/beetle.png
+    nav-buttons:
+      - icon: github
+        href: https://github.com/quarto-dev/quarto-cli
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/company/posit-software/
+        aria-label: LinkedIn
+      - icon: youtube
+        href: https://youtube.com]
+        aria-label: YouTube
+---
+
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+## Value boxes {height="25%"}
+
+```{r}
+#| label: calculate-values
+lowest_mileage_city <- mpg |>
+  filter(cty == min(cty)) |>
+  distinct(cty) |>
+  pull(cty)
+
+highest_mileage_city <- mpg |>
+  filter(cty == max(cty)) |>
+  distinct(cty) |>
+  pull(cty)
+
+rounded_mean_city_mileage <- mpg |>
+  summarize(round(mean(cty), 2)) |>
+  pull()
+```
+
+```{r}
+#| content: valuebox
+#| title: "Least efficient"
+#| icon: fuel-pump-fill
+#| color: "danger"
+list(
+  value = paste(lowest_mileage_city, "mpg")
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Most efficient"
+#| icon: fuel-pump
+#| color: "success"
+list(
+  value = paste(highest_mileage_city, "mpg")
+)
+```
+
+::: {.valuebox icon="fuel-pump" color="secondary"}
+Average city mileage
+
+`{r} rounded_mean_city_mileage` mpg
+:::
+
+## Plots {height="75%"}
+
+```{r}
+#| title: Highway vs City Mileage
+ggplot(mpg) + 
+  aes(cty, hwy) +
+  geom_point()
+```
+
+```{r}
+#| title: Drive types
+ggplot(mpg) +
+  aes(drv) +
+  geom_bar()
+```
