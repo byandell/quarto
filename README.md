@@ -11,7 +11,7 @@
 - [GitHub: quarto-dashboards](https://github.com/mine-cetinkaya-rundel/quarto-dashboards)
 - [GitHub: olympicdash](https://github.com/mine-cetinkaya-rundel/olympicdash)
 - [Dashboards with Shiny for R](https://quarto.org/docs/dashboards/interactivity/shiny-r.html)
-
+- [Quarto GitHub Pages](https://quarto.org/docs/publishing/github-pages.html)
 ### My Repos
 
 - [olympicdash](https://github.com/byandell/olympicdash)
