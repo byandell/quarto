@@ -7,3 +7,4 @@
 *_files/
 /.quarto/
 *.Rproj
+*quarto_ipynb
